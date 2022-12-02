@@ -53,3 +53,11 @@ Checkerboard::Checkerboard (Point xy)
     attach(y_labels);
 }
 
+
+Cell& Checkerboard::at (Point p)
+{
+    int i = N - 1 - (p.y - margin) / Cell::size;
+    int j = (p.x - margin) / Cell::size;
+
+    return cells[i * N + j];
+}
